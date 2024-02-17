@@ -1,10 +1,14 @@
 import { phrases } from "./phrases.js";
 
+function rand(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function showTime(){
-    const startDate = new Date('2023-10-16');
+    const startDate = new Date('2023-10-17');
     let text = "";
 
-    if(new Date().getDate() == 16){
+    if(new Date().getDate() == 17){
         text += "Feliz ";
         text += Math.floor((Date.now() - startDate) / (1000 * 3600 * 24 * 30.44));
         text += " Meses";
@@ -21,10 +25,6 @@ function showTime(){
 
 
 let text = "\"";
-
-function rand(min, max){
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 text += phrases[rand(0, phrases.length-1)]
 text += "\"";
 
