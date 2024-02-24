@@ -14,7 +14,7 @@ function showTime(){
         text += " Meses";
     }
     else{
-        text += "Juntos a  ";
+        text += "Juntos a ";
         text += Math.floor((Date.now() - startDate) / (1000 * 3600 * 24));
         text += " Dias";
     }
