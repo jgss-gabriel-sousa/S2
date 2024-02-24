@@ -49,12 +49,26 @@ function setPhrase(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    var containers = document.querySelectorAll('.container');
+    const containers = document.querySelectorAll('.container');
+    
     containers.forEach(function(container) {
         container.addEventListener('mouseenter', function() {
             var card = this.querySelector('.card');
             card.style.top = '-120px';
             card.style.transition = 'top 0.5s';
+        });
+        container.addEventListener('click', function() {
+            var card = this.querySelector('.card');
+            if(card.value == "clicked"){
+                card.style.top = '0px';
+                card.style.transition = 'top 0.5s';
+                card.value = "not-clicked"
+            }
+            else{
+                card.value = "clicked"
+                card.style.top = '-120px';
+                card.style.transition = 'top 0.5s';
+            }
         });
         container.addEventListener('mouseleave', function() {
             var card = this.querySelector('.card');
