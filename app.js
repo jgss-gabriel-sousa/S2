@@ -24,11 +24,28 @@ function showTime(){
 }showTime();
 
 
-let text = "\"";
-text += phrases[rand(0, phrases.length-1)]
-text += "\"";
+function selectPhrase(){
+    let hash = new Date().getDate() % phrases.length;
+    
+    if((new Date().getDate()-1 % phrases.length) == hash){
+        if(hash == phrases.length-1)
+            hash--;
+        else
+            hash++;
+    }
 
-document.querySelector(".phrase").innerText = text;
+    return phrases[hash];
+}
+
+
+function setPhrase(){
+    let text = "\"";
+    text += selectPhrase();
+    text += "\"";
+    
+    document.querySelector(".phrase").innerText = text;
+
+}setPhrase()
 
 
 document.addEventListener("DOMContentLoaded", function() {
